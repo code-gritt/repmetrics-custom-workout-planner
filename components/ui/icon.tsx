@@ -1,17 +1,35 @@
-import { icons } from "lucide-react";
+'use client';
+import React from 'react';
+import * as lucideIcons from 'lucide-react';
+import type { LucideIcon, LucideProps } from 'lucide-react';
 
-export const Icon = ({
+interface IconProps extends Omit<LucideProps, 'ref'> {
+  name: keyof typeof lucideIcons;
+}
+
+export const Icon: React.FC<IconProps> = ({
   name,
-  color,
-  size,
+  size = 24,
+  color = 'currentColor',
   className,
-}: {
-  name: keyof typeof icons;
-  color: string;
-  size: number;
-  className?: string;
+  ...props
 }) => {
-  const LucideIcon = icons[name as keyof typeof icons];
+  // Ensure it's actually a component
+  const LucideIconComponent = lucideIcons[name] as
+    | React.ElementType<LucideProps>
+    | undefined;
 
-  return <LucideIcon color={color} size={size} className={className} />;
+  if (!LucideIconComponent) {
+    console.warn(`Icon "${name}" does not exist in lucide-react`);
+    return null;
+  }
+
+  return (
+    <LucideIconComponent
+      size={size}
+      color={color}
+      className={className}
+      {...props}
+    />
+  );
 };

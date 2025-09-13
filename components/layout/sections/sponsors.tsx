@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import { Icon } from "@/components/ui/icon";
-import { Marquee } from "@devnomic/marquee";
-import "@devnomic/marquee/dist/index.css";
-import { icons } from "lucide-react";
+import { Icon } from '@/components/ui/icon';
+import { Marquee } from '@devnomic/marquee';
+import '@devnomic/marquee/dist/index.css';
+import { icons } from 'lucide-react';
+
 interface sponsorsProps {
   icon: string;
   name: string;
@@ -11,32 +12,32 @@ interface sponsorsProps {
 
 const sponsors: sponsorsProps[] = [
   {
-    icon: "Crown",
-    name: "Acmebrand",
+    icon: 'Activity',
+    name: 'FitCore',
   },
   {
-    icon: "Vegan",
-    name: "Acmelogo",
+    icon: 'Dumbbell',
+    name: 'LiftLabs',
   },
   {
-    icon: "Ghost",
-    name: "Acmesponsor",
+    icon: 'HeartPulse',
+    name: 'HealthSync',
   },
   {
-    icon: "Puzzle",
-    name: "Acmeipsum",
+    icon: 'BarChart',
+    name: 'Trackify',
   },
   {
-    icon: "Squirrel",
-    name: "Acme",
+    icon: 'LineChart',
+    name: 'Progressly',
   },
   {
-    icon: "Cookie",
-    name: "Accmee",
+    icon: 'Trophy',
+    name: 'PeakForm',
   },
   {
-    icon: "Drama",
-    name: "Acmetech",
+    icon: 'Users',
+    name: 'CoachCloud',
   },
 ];
 
@@ -44,7 +45,7 @@ export const SponsorsSection = () => {
   return (
     <section id="sponsors" className="max-w-[75%] mx-auto pb-24 sm:pb-32">
       <h2 className="text-lg md:text-xl text-center mb-6">
-        Our Platinum Sponsors
+        Trusted by Fitness Innovators
       </h2>
 
       <div className="mx-auto">

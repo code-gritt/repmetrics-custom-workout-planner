@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { icons } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Icon } from '@/components/ui/icon';
+import { icons } from 'lucide-react';
 
 interface FeaturesProps {
   icon: string;
@@ -10,40 +10,40 @@ interface FeaturesProps {
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    icon: 'Dumbbell',
+    title: 'Custom Workout Planner',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      'Design personalized routines with sets, reps, and exercises that fit your exact goals and equipment.',
   },
   {
-    icon: "BadgeCheck",
-    title: "Social Proof",
+    icon: 'PlayCircle',
+    title: 'Session Logging',
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      'Track your workouts in real time with timers, checklists, and credits-based logging for every rep completed.',
   },
   {
-    icon: "Goal",
-    title: "Targeted Content",
+    icon: 'LineChart',
+    title: 'Progress Visualizations',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      'Stay motivated with dynamic charts and animations that bring your fitness journey to life.',
   },
   {
-    icon: "PictureInPicture",
-    title: "Strong Visuals",
+    icon: 'Users',
+    title: 'Shared Plans Library',
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      'Browse and adopt community-approved workout plans, or submit your own for others to use.',
   },
   {
-    icon: "MousePointerClick",
-    title: "Clear CTA",
+    icon: 'CreditCard',
+    title: 'Credit System & Payments',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      'Enjoy flexible usage with a credits model and seamless PayPal integration for top-ups.',
   },
   {
-    icon: "Newspaper",
-    title: "Clear Headline",
+    icon: 'ShieldCheck',
+    title: 'Secure & Role-Based',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      'User and admin roles are managed with strict authentication, keeping your data and workouts safe.',
   },
 ];
 
@@ -55,13 +55,12 @@ export const FeaturesSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
+        What Makes RepMetrics Different
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+        From planning to tracking, RepMetrics gives you all the tools you need
+        to measure, optimize, and celebrate your progress.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

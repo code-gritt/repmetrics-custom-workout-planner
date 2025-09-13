@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/ui/accordion';
 
 interface FAQProps {
   question: string;
@@ -13,33 +13,34 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is this template free?",
-    answer: "Yes. It is a free NextJS Shadcn template.",
-    value: "item-1",
-  },
-  {
-    question: "Duis aute irure dolor in reprehenderit in voluptate velit?",
+    question: 'Can I create a custom workout plan?',
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam consectetur sapiente, iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
-    value: "item-2",
+      "Absolutely! RepMetrics allows you to design personalized workout routines tailored to your fitness goals, whether it's strength, cardio, or flexibility.",
+    value: 'item-1',
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet Consectetur natus dolor minus quibusdam?",
+    question: 'How does the credit system work?',
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis.",
-    value: "item-3",
+      'You start with 100 free credits. Each action, like creating a plan or logging a workout, consumes credits. You can top up anytime via PayPal to continue using premium features.',
+    value: 'item-2',
   },
   {
-    question: "Excepteur sint occaecat cupidata non proident sunt?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    value: "item-4",
+    question: 'Can I track my progress over time?',
+    answer:
+      'Yes! RepMetrics provides dynamic visualizations and progress animations so you can monitor reps, sessions completed, and overall fitness improvement.',
+    value: 'item-3',
   },
   {
-    question:
-      "Enim ad minim veniam, quis nostrud exercitation ullamco laboris?",
-    answer: "consectetur adipisicing elit. Sint labore.",
-    value: "item-5",
+    question: 'Are there shared workout plans?',
+    answer:
+      'Definitely. You can browse and adopt public workout plans approved by admins to try routines designed by other users or fitness experts.',
+    value: 'item-4',
+  },
+  {
+    question: 'Is RepMetrics suitable for beginners?',
+    answer:
+      'Yes. Our platform supports users of all levels with beginner-friendly exercises, tutorials, and customizable plans to gradually advance your fitness journey.',
+    value: 'item-5',
   },
 ];
 
@@ -52,7 +53,7 @@ export const FAQSection = () => {
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          Common Questions
+          Your Questions, Answered
         </h2>
       </div>
 
@@ -62,7 +63,6 @@ export const FAQSection = () => {
             <AccordionTrigger className="text-left">
               {question}
             </AccordionTrigger>
-
             <AccordionContent>{answer}</AccordionContent>
           </AccordionItem>
         ))}

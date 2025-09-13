@@ -1,10 +1,10 @@
-import { Badge } from "@/components/ui/badge";
+import { Badge } from '@/components/ui/badge';
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
 enum ProService {
   YES = 1,
@@ -17,25 +17,27 @@ interface ServiceProps {
 }
 const serviceList: ServiceProps[] = [
   {
-    title: "Custom Domain Integration",
+    title: 'Workout Plan Builder',
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
+      'Design personalized workout routines with sets, reps, and exercises tailored to your goals.',
     pro: 0,
   },
   {
-    title: "Social Media Integrations",
+    title: 'Session Logging',
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
+      'Track your progress in real time with timers, exercise checklists, and automatic stat recording.',
     pro: 0,
   },
   {
-    title: "Email Marketing Integrations",
-    description: "Lorem dolor sit amet adipisicing.",
+    title: 'Progress Analytics',
+    description:
+      'View detailed charts and insights that visualize your performance trends over time.',
     pro: 0,
   },
   {
-    title: "SEO Optimization",
-    description: "Lorem ipsum dolor sit amet consectetur.",
+    title: 'Advanced AI Recommendations',
+    description:
+      'Unlock PRO-level AI insights that suggest optimal workouts based on your training history.',
     pro: 1,
   },
 ];
@@ -48,13 +50,12 @@ export const ServicesSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Grow Your Business
+        Power Up Your Training
       </h2>
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        From marketing and sales to operations and strategy, we have the
-        expertise to help you achieve your goals.
+        RepMetrics offers everything from plan creation to advanced analytics —
+        so whether you’re a beginner or a pro, you’ll always train smarter.
       </h3>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:w-[60%] mx-auto">
         {serviceList.map(({ title, description, pro }) => (

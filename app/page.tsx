@@ -1,3 +1,4 @@
+import ClientWrapper from '@/components/client-wrapper';
 import { BenefitsSection } from '@/components/layout/sections/benefits';
 import { CommunitySection } from '@/components/layout/sections/community';
 import { ContactSection } from '@/components/layout/sections/contact';
@@ -43,16 +44,18 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <BenefitsSection />
-      <FeaturesSection />
-      <ServicesSection />
-      <TestimonialSection />
-      <CommunitySection />
-      <PricingSection />
-      <ContactSection />
-      <FAQSection />
-      <FooterSection />
+      <ClientWrapper>
+        <HeroSection />
+        <BenefitsSection />
+        <FeaturesSection />
+        <ServicesSection />
+        <TestimonialSection />
+        <CommunitySection />
+        <PricingSection />
+        <ContactSection />
+        <FAQSection />
+        <FooterSection />
+      </ClientWrapper>
     </>
   );
 }

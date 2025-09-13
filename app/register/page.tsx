@@ -104,6 +104,11 @@ export default function Register() {
           {isLoading ? <Loader /> : 'Register'}
         </Button>
       </form>
+      <Button variant="outline" className="w-full mt-4" asChild>
+        <Link href="https://repmetrics-backend.onrender.com/api/auth/google">
+          Register with Google
+        </Link>
+      </Button>
       <p className="text-center mt-4">
         Already have an account?{' '}
         <Link href="/login" className="text-primary hover:underline">

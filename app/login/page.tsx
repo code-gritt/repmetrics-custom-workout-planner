@@ -73,8 +73,13 @@ export default function Login() {
           {isLoading ? <Loader /> : 'Login'}
         </Button>
       </form>
+      <Button variant="outline" className="w-full mt-4" asChild>
+        <Link href="https://repmetrics-backend.onrender.com/api/auth/google">
+          Login with Google
+        </Link>
+      </Button>
       <p className="text-center mt-4">
-        Don&apos;t have an account?{' '}
+        No account?{' '}
         <Link href="/register" className="text-primary hover:underline">
           Register
         </Link>

@@ -1,9 +1,13 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+/** @var \Illuminate\Routing\Router $router */
+
 use App\Http\Controllers\AuthController;
 
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-Route::middleware('auth:sanctum')->get('/me', [AuthController::class, 'me']);
+$router->post('/register', [AuthController::class, 'register']);
+$router->post('/login', [AuthController::class, 'login']);
+
+$router->get('/me', [
+  'middleware' => 'auth:sanctum',
+  'uses' => [AuthController::class, 'me']
+]);

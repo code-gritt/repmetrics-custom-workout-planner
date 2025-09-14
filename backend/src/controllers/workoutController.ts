@@ -130,3 +130,25 @@ export const logSession = async (req: Request, res: Response) => {
     res.status(500).json({ error: "Server error" });
   }
 };
+
+export const submitPlanForSharing = async (req: Request, res: Response) => {
+  const user = (req as any).user;
+  const { plan_id } = req.body;
+
+  if (!plan_id) {
+    return res.status(400).json({ error: "Plan ID required" });
+  }
+
+  try {
+    const result = await pool.query(
+      "UPDATE workout_plans SET pending_approval = TRUE WHERE id = $1 AND user_id = $2 RETURNING *",
+      [plan_id, user.id]
+    );
+    if (!result.rows[0]) {
+      return res.status(404).json({ error: "Plan not found" });
+    }
+    res.json(result.rows[0]);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+};

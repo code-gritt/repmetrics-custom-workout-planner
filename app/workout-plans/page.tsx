@@ -13,6 +13,7 @@ interface WorkoutPlan {
   duration_days: number | null;
   exercises: { id: number; name: string; reps: number; sets: number }[];
   is_shared: boolean;
+  pending_approval: boolean;
   created_at: string;
 }
 
@@ -46,6 +47,35 @@ export default function WorkoutPlans() {
     };
     fetchPlans();
   }, [token]);
+
+  const submitForSharing = async (planId: number) => {
+    try {
+      const res = await fetch(
+        `https://repmetrics-backend.onrender.com/api/workout-plan/submit`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ plan_id: planId }),
+        }
+      );
+      const data = await res.json();
+      if (res.ok) {
+        setPlans(
+          plans.map((p) =>
+            p.id === planId ? { ...p, pending_approval: true } : p
+          )
+        );
+        toast.success("Plan submitted for approval");
+      } else {
+        toast.error(data.error || "Failed to submit plan");
+      }
+    } catch (err) {
+      toast.error("Server error");
+    }
+  };
 
   if (isLoading) {
     return (
@@ -84,9 +114,17 @@ export default function WorkoutPlans() {
                   </li>
                 ))}
               </ul>
-              <Link href={`/workout-plan/${plan.id}/log`}>
-                <Button className="mt-2">Log Session</Button>
-              </Link>
+              <div className="mt-2 flex gap-2">
+                <Link href={`/workout-plan/${plan.id}/log`}>
+                  <Button>Log Session</Button>
+                </Link>
+                {!plan.is_shared && !plan.pending_approval && (
+                  <Button onClick={() => submitForSharing(plan.id)}>
+                    Submit for Sharing
+                  </Button>
+                )}
+                {plan.pending_approval && <p>Pending Approval</p>}
+              </div>
             </li>
           ))}
         </ul>

@@ -3,6 +3,7 @@ import { register, login, me } from "../controllers/authController";
 import {
   createWorkoutPlan,
   viewProgress,
+  getWorkoutPlans,
 } from "../controllers/workoutController";
 import { authMiddleware } from "../middlewares/authMiddleware";
 
@@ -13,5 +14,6 @@ router.post("/login", login);
 router.get("/me", authMiddleware, me);
 router.post("/workout-plan", authMiddleware, createWorkoutPlan);
 router.get("/progress", authMiddleware, viewProgress);
+router.get("/workout-plans", authMiddleware, getWorkoutPlans);
 
 export default router;

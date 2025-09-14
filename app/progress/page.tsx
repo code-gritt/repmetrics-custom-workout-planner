@@ -3,6 +3,7 @@
 import { useUserStore } from "@/lib/store";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 interface Session {
   id: number;
@@ -43,7 +44,11 @@ export default function Progress() {
   }, [token]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        Loading...
+      </div>
+    );
   }
 
   return (
@@ -54,7 +59,13 @@ export default function Progress() {
       ) : (
         <ul className="space-y-4">
           {sessions.map((session) => (
-            <li key={session.id} className="border p-4 rounded">
+            <motion.li
+              key={session.id}
+              className="border p-4 rounded"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <p>
                 <strong>Plan:</strong> {session.plan_name}
               </p>
@@ -65,14 +76,19 @@ export default function Progress() {
               <p>
                 <strong>Exercises:</strong>
               </p>
-              <ul>
+              <ul className="list-disc pl-5">
                 {session.completed_exercises.map((ex, idx) => (
-                  <li key={idx}>
+                  <motion.li
+                    key={idx}
+                    initial={{ scale: 0.8 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     Exercise {ex.exercise_id}: {ex.reps_completed} reps
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </li>
+            </motion.li>
           ))}
         </ul>
       )}

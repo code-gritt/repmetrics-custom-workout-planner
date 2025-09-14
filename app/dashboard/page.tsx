@@ -72,6 +72,9 @@ export default function Dashboard() {
         <Link href="/progress">
           <Button variant="outline">View Progress</Button>
         </Link>
+        <Link href="/workout-plans">
+          <Button variant="outline">View Plans</Button>
+        </Link>
       </div>
     </section>
   );
